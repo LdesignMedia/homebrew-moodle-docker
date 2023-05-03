@@ -1,8 +1,8 @@
 class MoodleDocker < Formula
     desc "Moodle Docker"
     homepage "https://www.ldesignmedia.nl"
-    url "https://github.com/LdesignMedia/moodle-docker-brew/archive/refs/tags/v0.0.1.tar.gz"
-    sha256 "f53b3eae361da3880c4f52825d6e77b852047f35648a5c43146852546fd6abbb"
+    url "https://github.com/LdesignMedia/moodle-docker-brew/archive/refs/tags/v0.0.2.tar.gz"
+    sha256 "f5127e94cb2974fc968133f45f7fd24c07431309830c605a76119dd448bab540"
     license ""
 
     depends_on "bash"

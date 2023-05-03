@@ -1,8 +1,8 @@
 class MoodleDocker < Formula
     desc "Moodle Docker"
     homepage "https://www.ldesignmedia.nl"
-    url "https://github.com/LdesignMedia/moodle-docker-brew/archive/refs/tags/v0.0.2.tar.gz"
-    sha256 "f5127e94cb2974fc968133f45f7fd24c07431309830c605a76119dd448bab540"
+    url "https://github.com/LdesignMedia/moodle-docker-brew/archive/refs/tags/v0.0.3.tar.gz"
+    sha256 "900fd1f09331a230d261d447105803f8bc65c71ead1f53d369af46d03a0af73c"
     license ""
 
     depends_on "bash"
@@ -13,7 +13,10 @@ class MoodleDocker < Formula
 
     def install
       bin.install "moodle-docker"
+      bin.install Dir["moodle"]
+      bin.install Dir["moodlehq-docker"]
       bin.install Dir["scripts"]
       prefix.install "README.md"
+      prefix.install "moodle_versions.txt"
     end
 end

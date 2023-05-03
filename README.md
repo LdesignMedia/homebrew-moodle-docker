@@ -1,2 +1,2 @@
-# homebrew-ldesign
+# homebrew-moodledocker
 Homebrew files

@@ -22,6 +22,5 @@ class MoodleDocker < Formula
 
   def post_install
     system "git", "clone", "https://github.com/moodlehq/moodle-docker.git", "#{bin}/moodlehq-docker"
-    end
   end
 end

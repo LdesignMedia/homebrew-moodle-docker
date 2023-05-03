@@ -9,6 +9,7 @@ class MoodleDocker < Formula
     depends_on "awk"
     depends_on "git"
     depends_on "unzip"
+    depends_on "libunistring"
 
     def install
       bin.install 'moodle-docker'

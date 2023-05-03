@@ -12,6 +12,8 @@ class MoodleDocker < Formula
     depends_on "libunistring"
 
     def install
-      bin.install 'moodle-docker'
+      bin.install "moodle-docker"
+      bin.install Dir["scripts"]
+      prefix.install "README.md"
     end
 end

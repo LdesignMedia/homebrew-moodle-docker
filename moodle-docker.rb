@@ -18,11 +18,9 @@ class MoodleDocker < Formula
     bin.install Dir["scripts"]
     prefix.install "README.md"
     prefix.install "moodle_versions.txt"
-    prefix.install Dir["moodlehq-docker"]
   end
 
   def post_install
     system "git", "clone", "https://github.com/moodlehq/moodle-docker.git", "#{bin}/moodlehq-docker"
-    system "git", "clone", "https://github.com/moodlehq/moodle-docker.git", "#{prefix}/moodlehq-docker"
   end
 end

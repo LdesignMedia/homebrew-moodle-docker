@@ -18,7 +18,7 @@ class MoodleDocker < Formula
     bin.install Dir["scripts"]
     prefix.install "README.md"
     prefix.install "moodle_versions.txt"
-    prefix.instal Dir["moodlehq-docker"]
+    prefix.install Dir["moodlehq-docker"]
   end
 
   def post_install

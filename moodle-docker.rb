@@ -1,7 +1,7 @@
 class MoodleDocker < Formula
   desc "Moodle Docker"
   homepage "https://ldesignmedia.nl"
-  url "https://github.com/LdesignMedia/homebrew-moodle-docker.git", :using => :git
+  url "https://github.com/LdesignMedia/homebrew-moodle-docker.git", :branch => "main", :using => :git
   version "1.0.3"
 
   depends_on "bash"

@@ -2,13 +2,6 @@
 
 ## Installation
 
-- To be able to authenticate with github using your credentials:
-```bash
-brew tap microsoft/git
-brew install --cask git-credential-manager-core
-```
-- This will open a browser where you can allow access to GitHub. 
-
 - Create the homebrew tap:
 ```bash
   brew tap ldesignmedia/moodledocker
@@ -18,3 +11,13 @@ brew install --cask git-credential-manager-core
 ```bash
  brew install ldesignmedia/moodledocker/moodle-docker
 ```
+
+## Dependencies
+
+https://github.com/LdesignMedia/moodle-docker-brew/
+
+## Authors
+* Luuk Verhoeven :: [Ldesign Media](https://ldesignmedia.nl/) - [luuk@ldesignmedia.nl](luuk@ldesignmedia.nl)
+* Vincent Cornelis :: [Ldesign Media](https://ldesignmedia.nl/) - vincent.cornelis@ldesignmedia.nl
+
+<img src="https://ldesignmedia.nl/themes/ldesignmedia/assets/images/logo/logo.svg" alt="ldesignmedia" height="70px">

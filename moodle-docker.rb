@@ -15,10 +15,9 @@ class MoodleDocker < Formula
     #ohai `bash ./install_moodle_docker.sh`
 
     #system "bash", "./install_moodle_docker.sh"
-    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{bin}/moodle-docker-brew"
-    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git"
+    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{bin}/../moodle-docker-brew"
 
-    bin.install "#{bin}/moodle-docker-brew/moodle-docker" => "moodle-docker"
+    bin.install "#{bin}/../moodle-docker-brew/moodle-docker" => "moodle-docker"
 
     # Create a dummy file to satisfy Homebrew's requirement of installing something
     (prefix/"dummy").write ""

@@ -30,13 +30,13 @@ if [ ! -d "/Applications/OrbStack.app" ]; then
 fi
 
 echo "Cloning (moodle-docker-brew)"
-git clone git@github.com:LdesignMedia/moodle-docker-brew.git "$DESTDIR"
+sudo git clone git@github.com:LdesignMedia/moodle-docker-brew.git "$DESTDIR"
 
 if [ -d "$DESTDIR" ]; then
   cd "$DESTDIR" || exit
 
   # Installing dependencies.
-  git submodule update --init --recursive
+  sudo git submodule update --init --recursive
   chmod +x "$DESTDIR/moodle-docker"
 else
   echo "Error: installing failed.."

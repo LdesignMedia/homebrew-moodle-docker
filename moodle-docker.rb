@@ -16,7 +16,7 @@ class MoodleDocker < Formula
 
     #system "bash", "./install_moodle_docker.sh"
     system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{bin}/moodle-docker-brew"
-    bin.install "#{bin}/moodle-docker-brew/moodle-docker"
+    bin.install "#{bin}/moodle-docker-brew/brew.sh" => "moodle-docker"
 
     ohai "Complete installation"
   end

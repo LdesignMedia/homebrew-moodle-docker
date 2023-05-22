@@ -14,8 +14,8 @@ class MoodleDocker < Formula
 
   def install
     ohai "Start installation process.."
-    system "git", "clone", "https://github.com/LdesignMedia/moodle-docker-brew", "~/.moodle-docker-brew"
-    system "git", "clone", "https://github.com/username/repository.git", "#{ENV["HOME"]}/.moodle-docker-brew-2"
+    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "~/.moodle-docker-brew"
+    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{ENV["HOME"]}/.moodle-docker-brew-2"
     ohai "Repository successfully cloned!"
   end
   

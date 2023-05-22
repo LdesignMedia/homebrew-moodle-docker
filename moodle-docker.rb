@@ -2,7 +2,7 @@ class MoodleDocker < Formula
   desc "Moodle Docker"
   homepage "https://ldesignmedia.nl"
   url "https://github.com/LdesignMedia/homebrew-moodle-docker.git", :branch => "main", :using => :git
-  version "1.0.4"
+  version "1.0.5"
 
   depends_on "bash"
   depends_on "wget"
@@ -12,8 +12,9 @@ class MoodleDocker < Formula
 
   def install
     ohai "Installing Moodle Docker"
+    ohai `bash ./install_moodle_docker.sh`
 
-    system "bash", "./install_moodle_docker.sh"
+    #system "bash", "./install_moodle_docker.sh"
     bin.install "~/.moodle-docker-brew/moodle-docker" => "moodle-docker"
 
     # Create a dummy file to satisfy Homebrew's requirement of installing something

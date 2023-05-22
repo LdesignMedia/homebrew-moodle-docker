@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 echo "Installing (moodle-docker-brew)"
-echo "The current user's home directory is: $HOME"
 
-if [ -d ~/.moodle-docker-brew ]; then
-  rm -rf ~/.moodle-docker-brew
+homedir=$(dscl . -read /Users/$(whoami) NFSHomeDirectory | awk '{print $NF}')
+echo "The current user's home directory is: $homedir"
+
+destdir="$homedir/.moodle-docker-brew"
+
+if [ -d "$destdir" ]; then
+  rm -rf "$destdir"
 fi
 
 # Check if unzip is installed
@@ -25,18 +29,20 @@ if [ ! -d "/Applications/OrbStack.app" ]; then
 fi
 
 echo "Cloning (moodle-docker-brew)"
-git clone git@github.com:LdesignMedia/moodle-docker-brew.git ~/.moodle-docker-brew
+git clone git@github.com:LdesignMedia/moodle-docker-brew.git "$destdir"
 
 if [ -d ~/.moodle-docker-brew ]; then
   cd ~/.moodle-docker-brew || exit
 
   # Installing dependencies.
-  if [ ! -f ~/.moodle-docker-brew/moodlehq-docker/config.docker-template.php ]; then
+  if [ ! -f "$destdir/moodlehq-docker/config.docker-template.php" ]; then
     git submodule update --init --recursive
   fi
 
-  chmod +x ~/.moodle-docker-brew/moodle-docker
+  chmod +x "$destdir/moodle-docker"
 else
   echo "Error installing failed.."
   exit 1
 fi
+
+echo "Finished installing dependencies"

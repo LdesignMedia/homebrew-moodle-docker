@@ -13,11 +13,11 @@ class MoodleDocker < Formula
   depends_on "unzip"
 
   def install
-    bin.install "#{ENV["HOME"]}/.moodle-docker-brew/install.sh"
+    bin.install "~/.moodle-docker-brew/install.sh"
   end
 
   def post_install
-    system "git", "clone", "https://github.com/LdesignMedia/moodle-docker-brew", "#{ENV["HOME"]}/.moodle-docker-brew"
+    system "git", "clone", "https://github.com/LdesignMedia/moodle-docker-brew", "~/.moodle-docker-brew"
   end
   
 end

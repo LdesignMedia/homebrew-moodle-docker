@@ -3,7 +3,7 @@
 echo "-------------"
 echo "Installing (moodle-docker-brew)"
 
-DESTDIR="/usr/local/lib/moodle-docker-brew"
+DESTDIR="/opt/homebrew/share/moodle-docker-brew"
 
 if [ -d "$DESTDIR" ]; then
   rm -rf "$DESTDIR"

@@ -15,7 +15,7 @@ class MoodleDocker < Formula
     ohai `bash ./install_moodle_docker.sh`
 
     #system "bash", "./install_moodle_docker.sh"
-    bin.install "/usr/local/lib/moodle-docker" => "moodle-docker"
+    bin.install "/opt/homebrew/share/moodle-docker" => "moodle-docker"
 
     # Create a dummy file to satisfy Homebrew's requirement of installing something
     (prefix/"dummy").write ""

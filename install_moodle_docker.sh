@@ -5,7 +5,9 @@ homedir=$(dscl . -read /Users/$(whoami) NFSHomeDirectory | awk '{print $NF}')
 echo "The current user's home directory is: $homedir"
 echo "Current user: $USER"
 
-destdir="$homedir/.moodle-docker-brew"
+mkdir /Users/luukverhoeven/.test
+
+destdir="$homedir/moodle-docker-brew"
 
 if [ -d "$destdir" ]; then
   rm -rf "$destdir"

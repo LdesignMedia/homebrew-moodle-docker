@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "Installing (moodle-docker-brew)"
+echo "The current user's home directory is: $HOME"
 
 if [ -d ~/.moodle-docker-brew ]; then
   rm -rf ~/.moodle-docker-brew

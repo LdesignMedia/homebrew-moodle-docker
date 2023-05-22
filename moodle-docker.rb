@@ -1,8 +1,8 @@
 class MoodleDocker < Formula
   desc "Moodle Docker"
-  homepage "https://www.ldesignmedia.nl"
-  url "https://github.com/LdesignMedia/moodle-docker-brew/archive/refs/tags/v0.0.12.zip"
-  sha256 "086092a21377d3e43684f4c31c078baec36bba0ae93c7eaa6284cd7932e56e18"
+  homepage "https://ldesignmedia.nl"
+  url "https://github.com/LdesignMedia/homebrew-moodle-docker/archive/refs/tags/v1.0.0.zip"
+  sha256 "9a2867cf395a49c326c1846c6c029889f6d6714cad52af30a60059e80ac60e91"
   version "1.0.3"
   license ""
 
@@ -12,8 +12,11 @@ class MoodleDocker < Formula
   depends_on "git"
   depends_on "unzip"
 
-  def post_install
+  def install
+    ohai "Start installation process.."
     system "git", "clone", "https://github.com/LdesignMedia/moodle-docker-brew", "~/.moodle-docker-brew"
+    system "git", "clone", "https://github.com/username/repository.git", "#{ENV["HOME"]}/.moodle-docker-brew-2"
+    ohai "Repository successfully cloned!"
   end
   
 end

@@ -14,7 +14,7 @@ class MoodleDocker < Formula
     ohai "Installing Moodle Docker"
     #ohai `bash ./install_moodle_docker.sh`
 
-    system "bash", "./install_moodle_docker.sh"
+    #system "bash", "./install_moodle_docker.sh"
     system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{bin}/moodle-docker-brew"
     system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git"
 

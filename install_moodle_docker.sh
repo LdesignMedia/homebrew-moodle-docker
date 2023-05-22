@@ -43,5 +43,6 @@ if [ ! -d "$DESTDIR" ]; then
   echo "Finished installing dependencies"
 
 else
+  brew list --versions moodle-docker
   bash "$HOME_DIR"/.moodle-docker-brew/moodle-docker "$@"
 fi

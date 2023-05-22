@@ -11,7 +11,6 @@ class MoodleDocker < Formula
   depends_on "unzip"
 
   def install
-    system "brew", "list" , "--versions moodle-docker"
     ohai "Installing/updating Moodle Docker"
     bin.install "install_moodle_docker.sh" => "moodle-docker"
     ohai "Complete"

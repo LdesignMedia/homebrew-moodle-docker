@@ -14,7 +14,11 @@ class MoodleDocker < Formula
 
   def install
     ohai "Cloning repository into home directory..."
-    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "~/.moodle-docker-brew"
+    #system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "~/.moodle-docker-brew"
+    #system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{ENV["HOME"]}/moodle-docker-brew"
+    
+    bin.install "install.sh"
+    
     ohai "Repository successfully cloned!"
     
     # Create a dummy file to satisfy Homebrew's requirement of installing something

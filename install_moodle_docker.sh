@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
-echo "Installing (moodle-docker-brew)"
 
-homedir=$(dscl . -read /Users/$(whoami) NFSHomeDirectory | awk '{print $NF}')
-echo "The current user's home directory is: $homedir"
+echo "-------------"
+echo "Installing (moodle-docker-brew)"
+echo "Installing to: $HOME"
 echo "Current user: $USER"
 
-mkdir /Users/luukverhoeven/.test
+DESTDIR="$HOME/.moodle-docker-brew"
 
-destdir="$homedir/moodle-docker-brew"
-
-if [ -d "$destdir" ]; then
-  rm -rf "$destdir"
+if [ -d "$DESTDIR" ]; then
+  rm -rf "$DESTDIR"
 fi
 
 # Check if unzip is installed
@@ -32,20 +30,18 @@ if [ ! -d "/Applications/OrbStack.app" ]; then
 fi
 
 echo "Cloning (moodle-docker-brew)"
-git clone git@github.com:LdesignMedia/moodle-docker-brew.git "$destdir"
+git clone git@github.com:LdesignMedia/moodle-docker-brew.git "$DESTDIR"
 
-if [ -d "$destdir"  ]; then
-  cd "$destdir" || exit
+if [ -d "$DESTDIR" ]; then
+  cd "$DESTDIR" || exit
 
   # Installing dependencies.
-  if [ ! -f "$destdir/moodlehq-docker/config.docker-template.php" ]; then
-    git submodule update --init --recursive
-  fi
-
-  chmod +x "$destdir/moodle-docker"
+  git submodule update --init --recursive
+  chmod +x "$DESTDIR/moodle-docker"
 else
   echo "Error: installing failed.."
   exit 1
 fi
 
 echo "Finished installing dependencies"
+echo "-------------"

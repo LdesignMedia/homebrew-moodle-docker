@@ -11,13 +11,8 @@ class MoodleDocker < Formula
   depends_on "unzip"
 
   def install
-    ohai "Installing Moodle Docker"
-    #ohai `bash ./install_moodle_docker.sh`
-
-    #system "bash", "./install_moodle_docker.sh"
-    system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{bin}/moodle-docker-brew"
-    bin.install "#{bin}/moodle-docker-brew/brew.sh" => "moodle-docker"
-
-    ohai "Complete installation"
+    ohai "Installing/updating Moodle Docker"
+    bin.install "install_moodle_docker.sh" => "moodle-docker"
+    ohai "Complete"
   end
 end

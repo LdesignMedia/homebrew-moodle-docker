@@ -13,16 +13,15 @@ class MoodleDocker < Formula
   depends_on "unzip"
 
   def install
-    # ohai "Cloning repository into home directory..."
-    #system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "~/.moodle-docker-brew"
-    #system "git", "clone", "git@github.com:LdesignMedia/moodle-docker-brew.git", "#{ENV["HOME"]}/moodle-docker-brew"
-    
+    ohai "Installing Moodle Docker"
+
     bin.install "install_moodle_docker.sh"
-    
-    #ohai "Repository successfully cloned!"
-    
+    bin.install "~/.moodle-docker-brew/moodle-docker" => "moodle-docker"
+
     # Create a dummy file to satisfy Homebrew's requirement of installing something
     (prefix/"dummy").write ""
+
+    ohai "Complete installation"
   end
   
 end

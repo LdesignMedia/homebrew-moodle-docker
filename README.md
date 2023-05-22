@@ -1,2 +1,2 @@
-# homebrew-moodledocker
+# homebrew-moodle-docker
 Homebrew files

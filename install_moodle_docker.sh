@@ -3,6 +3,7 @@ echo "Installing (moodle-docker-brew)"
 
 homedir=$(dscl . -read /Users/$(whoami) NFSHomeDirectory | awk '{print $NF}')
 echo "The current user's home directory is: $homedir"
+echo "Current user: $USER"
 
 destdir="$homedir/.moodle-docker-brew"
 
@@ -31,8 +32,8 @@ fi
 echo "Cloning (moodle-docker-brew)"
 git clone git@github.com:LdesignMedia/moodle-docker-brew.git "$destdir"
 
-if [ -d ~/.moodle-docker-brew ]; then
-  cd ~/.moodle-docker-brew || exit
+if [ -d "$destdir"  ]; then
+  cd "$destdir" || exit
 
   # Installing dependencies.
   if [ ! -f "$destdir/moodlehq-docker/config.docker-template.php" ]; then
@@ -41,7 +42,7 @@ if [ -d ~/.moodle-docker-brew ]; then
 
   chmod +x "$destdir/moodle-docker"
 else
-  echo "Error installing failed.."
+  echo "Error: installing failed.."
   exit 1
 fi
 

@@ -2,14 +2,14 @@
 
 echo "-------------"
 echo "Installing (moodle-docker-brew)"
-echo "Installing to: $HOME"
-echo "Current user: $USER"
 
-DESTDIR="$HOME/.moodle-docker-brew"
+DESTDIR="/usr/local/Cellar/.moodle-docker-brew"
 
 if [ -d "$DESTDIR" ]; then
   rm -rf "$DESTDIR"
 fi
+
+echo "Installing to: $DESTDIR"
 
 # Check if unzip is installed
 if ! command -v unzip >/dev/null 2>&1; then

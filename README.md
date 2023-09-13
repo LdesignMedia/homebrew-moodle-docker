@@ -12,7 +12,7 @@
  brew install ldesignmedia/moodledocker/moodle-docker
 ```
 
-## Dependencies
+## More information
 
 https://github.com/LdesignMedia/moodle-docker-brew/
 

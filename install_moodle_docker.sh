@@ -32,10 +32,7 @@ if [ ! -d "$DESTDIR" ]; then
   if [ -d "$DESTDIR" ]; then
     cd "$DESTDIR" || exit
 
-    # Installing dependencies.
-    git submodule update --init --recursive
-    # Fix issue with the command above.
-    git submodule add -b main git@github.com:moodlehq/moodle-docker.git moodlehq-docker
+    git clone git@github.com:moodlehq/moodle-docker.git moodlehq-docker
     chmod +x "$DESTDIR/moodle-docker"
   else
     echo "Error: installing failed.."

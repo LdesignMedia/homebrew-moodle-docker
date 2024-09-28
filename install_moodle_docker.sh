@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 HOME_DIR=$(dscl . -read /Users/$(whoami) NFSHomeDirectory | awk '{print $NF}')
-DESTDIR="$HOME_DIR/.moodle-docker-brew"
+DESTDIR="$HOME_DIR/moodle-docker-brew"
 
 if [ ! -d "$DESTDIR" ]; then
 
@@ -42,5 +42,5 @@ if [ ! -d "$DESTDIR" ]; then
   echo "Finished installing dependencies"
 
 else
-  exec /bin/bash -i "$HOME_DIR"/.moodle-docker-brew/moodle-docker "$@"
+  exec /bin/bash -i "$HOME_DIR"/moodle-docker-brew/moodle-docker "$@"
 fi
